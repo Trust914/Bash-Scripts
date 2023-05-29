@@ -31,12 +31,17 @@ then
   if [[ $distro_family == "fedora" ]]
   then
     distro_type="fedora"
-    sudo yum install dnf-plugins-core -y
+    sudo dnf install dnf-plugins-core -y
+    sudo dnf -y install dnf-plugins-core
+    sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+  elif [[ $distro_family == "rhel"]]
+  then 
+    sudo yum install -y yum-utils
+    sudo yum-config-manager --add-repo https://download.docker.com/linux/$distro_type/docker-ce.repo
   fi
   sudo yum update -y
   sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine -y
-  sudo yum install -y yum-utils
-  sudo yum-config-manager --add-repo https://download.docker.com/linux/$distro_type/docker-ce.repo
+  
   sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
   sudo systemctl start docker
   sudo systemctl enable docker
