@@ -3,12 +3,12 @@
 ### INSTALL KUBECTL
 distro_family=$(awk -F= '/^ID_LIKE=/{gsub("\"", "", $2); print $2}' /etc/os-release)
 
-if [[ $distro_family == "debian"]]
+if [[ $distro_family == "debian" ]]
 then
     sudo apt-get update
     sudo apt install awscli -y
 
-elif [[ $distro_family == *"rhel"*]]
+elif [[ $distro_family == *"rhel"* ]]
 then    
     sudo yum update -y
     sudo yum install awscli -y
