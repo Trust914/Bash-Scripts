@@ -1,9 +1,20 @@
 #!/bin/bash
 
 ### INSTALL KUBECTL
+distro_family=$(awk -F= '/^ID_LIKE=/{gsub("\"", "", $2); print $2}' /etc/os-release)
+
+if [[ $distro_family == "debian"]]
+then
+    sudo apt-get update
+    sudo apt install awscli -y
+
+elif [[ $distro_family == *"rhel"*]]
+then    
+    sudo yum update -y
+    sudo yum install awscli -y
+fi
 
 # Install kubectl binary with curl on Linux 
-sudo apt-get update
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
 # Validate the binary
@@ -26,7 +37,6 @@ chmod +x kops-linux-amd64
 
 # Move the kops binary in to your PATH.
 sudo mv kops-linux-amd64 /usr/local/bin/kops
-sudo apt install awscli -y
 
 
 
