@@ -28,17 +28,9 @@ then
   
 elif [[ $distro_family == *"rhel"* || $distro_family == *"fedora"* ]]
 then
-  if [[ $distro_family == "fedora" ]]
-  then
-    distro_type="fedora"
-    sudo dnf install dnf-plugins-core -y
-    sudo dnf -y install dnf-plugins-core
-    sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-  elif [[ $distro_family == "rhel" ]]
-  then 
-    sudo yum install -y yum-utils
-    sudo yum-config-manager --add-repo https://download.docker.com/linux/$distro_type/docker-ce.repo
-  fi
+  sudo yum install -y yum-utils
+  sudo yum-config-manager --add-repo https://download.docker.com/linux/$distro_type/docker-ce.repo
+
   sudo yum update -y
   sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine -y
   
