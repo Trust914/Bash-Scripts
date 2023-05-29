@@ -30,7 +30,7 @@ elif [[ $distro_family == *"rhel"* || $distro_family == *"fedora"* ]]
 then
   if [[ $distro_family == "fedora" ]]
   then
-    distro_family="fedora"
+    distro_type="fedora"
     sudo yum install dnf-plugins-core -y
   fi
   sudo yum update -y
