@@ -34,7 +34,7 @@ then
     sudo dnf install dnf-plugins-core -y
     sudo dnf -y install dnf-plugins-core
     sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-  elif [[ $distro_family == "rhel"]]
+  elif [[ $distro_family == "rhel" ]]
   then 
     sudo yum install -y yum-utils
     sudo yum-config-manager --add-repo https://download.docker.com/linux/$distro_type/docker-ce.repo
