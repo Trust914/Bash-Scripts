@@ -31,6 +31,7 @@ then
   if [[ $distro_family == "fedora" ]]
   then
     distro_family="fedora"
+    sudo yum install dnf-plugins-core -y
   fi
   sudo yum update -y
   sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine -y
