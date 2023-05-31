@@ -14,3 +14,4 @@ choco install awscli -y
 choco install adobereader -y
 choco install minikube kubernetes-cli -y
 choco install lens -y
+choco install teamviewer -y
