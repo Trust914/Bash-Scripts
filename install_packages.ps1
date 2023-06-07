@@ -15,3 +15,5 @@ choco install adobereader -y
 choco install minikube kubernetes-cli -y
 choco install lens -y
 choco install teamviewer -y
+choco install googlechrome -y
+choco install terraform -y
