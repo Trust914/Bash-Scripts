@@ -17,3 +17,4 @@ choco install lens -y
 choco install teamviewer -y
 choco install googlechrome -y
 choco install terraform -y
+choco install visualstudio2022community -y
