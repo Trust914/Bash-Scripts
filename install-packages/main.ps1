@@ -1,12 +1,20 @@
-# Specify the path to the file containing package names
-$packageFile = ".\packages.txt"
+$packagesFile = "packages.txt"
 
 # Read the package names from the file
-$packages = Get-Content $packageFile
+$packageNames = Get-Content $packagesFile
 
-# Loop through each package and install it using Chocolatey
-foreach ($package in $packages) {
-    Write-Host "Installing package: $package"
-    choco install $package -y
+# Loop through each package name
+foreach ($packageName in $packageNames) {
+    # Check if the package is already installed
+    $isInstalled = choco list --local-only --exact $packageName | Select-String -Pattern "^$packageName\s"
+
+    if ($isInstalled) {
+        Write-Host "Package '$packageName' is already installed."
+    }
+    else {
+        # Install the package using Chocolatey
+        Write-Host "Installing package '$packageName'..."
+        choco install $packageName -y
+    }
 }
 
