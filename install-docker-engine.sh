@@ -52,4 +52,5 @@ fi
 echo "Adding user: $user"
 sudo usermod -aG docker $user
 echo "User $user added to the docker group."
+sudo systemctl restart docker
 #sudo reboot
