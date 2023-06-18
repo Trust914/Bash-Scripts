@@ -18,3 +18,4 @@ teamviewer
 googlechrome
 terraform
 visualstudio2022community
+anydesk.install
