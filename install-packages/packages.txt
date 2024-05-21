@@ -1,3 +1,4 @@
+
 pycharm-community
 vagrant
 protonvpn
@@ -18,4 +19,8 @@ teamviewer
 googlechrome
 terraform
 visualstudio2022community
-anydesk.install
+discord
+gh
+sql-server-management-studio
+mysql
+slack
