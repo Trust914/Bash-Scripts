@@ -24,3 +24,5 @@ gh
 sql-server-management-studio
 mysql
 slack
+anydesk.install
+
