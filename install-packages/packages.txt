@@ -30,7 +30,7 @@ googlechrome
 zoom
 discord
 slack
-teams
+microsoft-teams.install
 teamviewer
 putty
 protonvpn
